@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -9,9 +8,10 @@ import BASE_URL from '../../config';
 import { RecordsResponse } from './types';
 import formatMoment from '../../utils/formatMoment';
 import Pagination from './Pagination';
+import Filters from '../../components/Filters';
 
 function Records() {
-    const [recordsResponse, setRecordsResponse] = useState<RecordsResponse>([]);
+    const [recordsResponse, setRecordsResponse] = useState<RecordsResponse>();
     const [activePage, setActivePage] = useState(0);
 
     function handlePageChange(index: number) {
@@ -29,13 +29,7 @@ function Records() {
 
     return (
         <div className="page-container">
-            <div className="filters-container records-actions">
-                <Link to="/charts">
-                    <button type="button" className="action-filters">
-                        VER GRÁFICOS
-                    </button>
-                </Link>
-            </div>
+            <Filters link="/charts" linkText="VER GRÁFICOS" />
             <table className="records-table" cellPadding="0" cellSpacing="0">
                 <thead>
                     <tr>
