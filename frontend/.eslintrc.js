@@ -42,7 +42,7 @@ module.exports = {
         'react/prop-types': ['off'],
         'max-len': ['warn', { code: 150 }],
         'no-use-before-define': [0],
-        'typescript-eslint/no-use-before-define': [0],
+        'typescript-eslint/no-use-before-define': ['off'],
     },
     settings: {
         'import/resolver': {
