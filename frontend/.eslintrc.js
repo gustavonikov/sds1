@@ -1,29 +1,29 @@
 module.exports = {
-    "env": {
-        "es6": true,
-        "node": true
+    env: {
+        es6: true,
+        node: true,
     },
-    "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+    extends: [
+        'plugin:react/recommended',
+        'airbnb',
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+    globals: {
+        Atomics: 'readonly',
+        SharedArrayBuffer: 'readonly',
     },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaFeatures: {
+            jsx: true,
         },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+        ecmaVersion: 2018,
+        sourceType: 'module',
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
+    plugins: [
+        'react',
+        '@typescript-eslint',
     ],
-    "rules": {
+    rules: {
         'linebreak-style': ['off'],
         'object-curly-newline': ['off'],
         'react/jsx-indent': ['off'],
@@ -39,7 +39,16 @@ module.exports = {
             tsx: 'never',
             svg: 'never',
         }],
-        "react/prop-types": ['off'],
-        'max-len': ['warn', { 'code': 150}],
-    }
+        'react/prop-types': ['off'],
+        'max-len': ['warn', { code: 150 }],
+        'no-use-before-define': [0],
+        'typescript-eslint/no-use-before-define': [0],
+    },
+    settings: {
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
+        },
+    },
 };
